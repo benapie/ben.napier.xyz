@@ -1,5 +1,13 @@
+import { Prelude } from "Prelude";
+import { Navbar } from "features/navbar";
+import { Routes } from "Routes";
+import * as Styled from "./styles/App.styles";
+
 export const App = () => (
-  <p>
-    hello world
-  </p>
+  <Prelude>
+    <Styled.App>
+      <Navbar />
+      <Routes />
+    </Styled.App>
+  </Prelude>
 );

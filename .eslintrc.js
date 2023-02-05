@@ -11,8 +11,6 @@ module.exports = {
   plugins: [
     "react",
     "@typescript-eslint",
-    "sort-imports-es6-autofix",
-    "sort-exports",
   ],
   rules: {
     "import/extensions": [
@@ -40,18 +38,10 @@ module.exports = {
     "import/no-default-export": "error",
     "no-bitwise": "off",
     "no-plusplus": "off",
-    "sort-imports-es6-autofix/sort-imports-es6": [
-      2,
-      {
-        ignoreCase: false,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-      },
-    ],
     "no-restricted-imports": [
       "error",
       {
-        patterns: ["*/features/*/*"],
+        patterns: ["features/*/*"],
       },
     ],
     "react/prop-types": "off",
@@ -60,13 +50,5 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": "off",
     "react/react-in-jsx-scope": "off",
   },
-  overrides: [
-    {
-      files: ["src/*/index.ts"],
-      rules: {
-        "sort-exports/sort-exports": ["error", { sortDir: "asc" }],
-      },
-    },
-  ],
   ignorePatterns: [".eslintrc.js"],
 };
