@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const NavLink = styled.button<{
@@ -7,13 +8,28 @@ export const NavLink = styled.button<{
   user-select: none;
 
   cursor: ${({ selected }) => (selected ? "default" : "pointer")};
+
   background-color: ${({ theme }) => theme.colors.layer01};
-  font-family: ${({ theme }) => theme.fonts.heading};
+  box-sizing: border-box;
   text-transform: uppercase;
   padding: 10px;
+  font-family: ${({ theme }) => theme.fonts.heading};
 
-  box-sizing: border-box;
+  position: relative;
 
-  border-bottom: ${({ selected, theme }) =>
-    selected ? `1px solid ${theme.colors.accent01}` : "1px solid transparent"};
+  transition: all 300ms ease-out 0s;
+
+  :hover {
+    background-color: ${({ theme }) => theme.colors.layer01Hover};
+  }
+`;
+
+export const Underline = styled(motion.div)`
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  left: 0;
+
+  height: 1px;
+  background-color: ${({ theme }) => theme.colors.accent01};
 `;

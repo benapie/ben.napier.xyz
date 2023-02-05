@@ -3,6 +3,7 @@ import "styled-components";
 interface Colors {
   background: string;
   layer01: string;
+  layer01Hover: string;
   textPrimary: string;
   accent01: string;
   accent02: string;

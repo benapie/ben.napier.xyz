@@ -4,6 +4,7 @@ export const DefaultTheme = {
   colors: {
     background: "#161616",
     layer01: "#262626",
+    layer01Hover: "#333333",
     textPrimary: "#f4f4f4",
     accent01: "#88C0D0",
     accent02: "#8FBCBB",
