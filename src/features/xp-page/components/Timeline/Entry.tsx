@@ -1,3 +1,5 @@
+import { Border } from "components/Border";
+import { createRef } from "react";
 import { EntryData } from "../../types/EntryData";
 import { DetailsBox } from "./DetailsBox";
 import * as Styled from "./styles/Entry.styles";
@@ -11,12 +13,15 @@ export const Entry = ({
   direction,
   data: { title, subtitle, body, date },
 }: EntryProps) => {
+  const hoverRef = createRef<HTMLDivElement>();
+
   const detailsElement = (
     <DetailsBox direction={direction}>
-      <Styled.Details>
+      <Styled.Details ref={hoverRef}>
         <Styled.H1>{title}</Styled.H1>
         <Styled.H2>{subtitle}</Styled.H2>
         <Styled.P>{body}</Styled.P>
+        <Border hoverRef={hoverRef} />
       </Styled.Details>
     </DetailsBox>
   );

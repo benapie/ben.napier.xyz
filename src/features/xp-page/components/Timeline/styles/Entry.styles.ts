@@ -43,6 +43,7 @@ export const Details = styled.div`
   flex-direction: column;
   row-gap: 10px;
   padding: 30px;
+  position: relative;
 `;
 
 export const H1 = styled.div`

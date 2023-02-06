@@ -8,6 +8,6 @@ export const Routes = () => (
     <Route path="/home" element={<SplashPage />} />
     <Route path="/experience" element={<ExperiencePage />} />
     <Route path="/contact" element={<ContactPage />} />
-    <Route path="*" element={<Navigate to="/contact" />} />
+    <Route path="*" element={<Navigate to="/home" />} />
   </ReactRouterRoutes>
 );
