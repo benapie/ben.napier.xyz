@@ -1,3 +1,5 @@
+import { Border } from "components/Border";
+import { createRef } from "react";
 import * as Styled from "./styles/Card.styles";
 
 export type CardProps = {
@@ -11,14 +13,19 @@ export const Card = ({
   iconSource,
   headingSource = null,
   headingText = null,
-}: CardProps) => (
-  <Styled.Card>
-    {headingSource ? (
-      <Styled.ImageHeading src={headingSource} alt="icon" />
-    ) : (
-      <Styled.TextHeading>{headingText}</Styled.TextHeading>
-    )}
+}: CardProps) => {
+  const ref = createRef<HTMLDivElement>();
 
-    <Styled.Icon src={iconSource} alt="icon" />
-  </Styled.Card>
-);
+  return (
+    <Styled.Card ref={ref}>
+      {headingSource ? (
+        <Styled.ImageHeading src={headingSource} alt="icon" />
+      ) : (
+        <Styled.TextHeading>{headingText}</Styled.TextHeading>
+      )}
+
+      <Styled.Icon src={iconSource} alt="icon" />
+      <Border hoverRef={ref} />
+    </Styled.Card>
+  );
+};

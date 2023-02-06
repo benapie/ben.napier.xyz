@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Card = styled.div`
@@ -6,6 +7,15 @@ export const Card = styled.div`
   display: grid;
   grid-template-rows: 112px 210px;
   box-sizing: border-box;
+  position: relative;
+`;
+
+export const CardBorder = styled(motion.div)`
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  left: -1px;
+  border: 1px solid red;
 `;
 
 export const ImageHeading = styled.img`
