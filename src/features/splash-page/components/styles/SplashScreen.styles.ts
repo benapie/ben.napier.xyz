@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const SplashScreen = styled.div``;
+export const SplashScreen = styled.div`
+  position: relative;
+  padding-top: 20vh;
+  padding-left: 15vw;
+`;
 
 export const Content = styled.div`
   display: flex;

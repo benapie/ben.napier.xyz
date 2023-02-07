@@ -31,7 +31,9 @@ const Page = {
   Experience: "experience",
   Contact: "contact",
 } as const;
+
 type Page = (typeof Page)[keyof typeof Page];
+
 const isKnownPage = (val: string): val is Page =>
   Object.values(Page).some((page) => page === val);
 

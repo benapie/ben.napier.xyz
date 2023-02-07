@@ -6,7 +6,9 @@ import * as Styled from "./styles/App.styles";
 export const App = () => (
   <Prelude>
     <Styled.App>
-      <Navbar />
+      <Styled.NavbarContainer>
+        <Navbar />
+      </Styled.NavbarContainer>
       <Routes />
     </Styled.App>
   </Prelude>
