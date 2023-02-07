@@ -1,4 +1,4 @@
-import { Border } from "components/Border";
+import { AnimatedBorder } from "components/AnimatedBorder";
 import { createRef } from "react";
 import { EntryData } from "../../types/EntryData";
 import { DetailsBox } from "./DetailsBox";
@@ -21,7 +21,7 @@ export const Entry = ({
         <Styled.H1>{title}</Styled.H1>
         <Styled.H2>{subtitle}</Styled.H2>
         <Styled.P>{body}</Styled.P>
-        <Border hoverRef={hoverRef} />
+        <AnimatedBorder hoverRef={hoverRef} />
       </Styled.Details>
     </DetailsBox>
   );

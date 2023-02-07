@@ -7,7 +7,7 @@ export type BorderProps = {
   hoverRef: RefObject<HTMLDivElement>;
 };
 
-export const Border = ({ hoverRef }: BorderProps) => {
+export const AnimatedBorder = ({ hoverRef }: BorderProps) => {
   const { controls } = useAnimation({ hoverRef });
 
   return (

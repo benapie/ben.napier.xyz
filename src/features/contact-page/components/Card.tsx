@@ -1,4 +1,4 @@
-import { Border } from "components/Border";
+import { AnimatedBorder } from "components/AnimatedBorder";
 import { createRef } from "react";
 import * as Styled from "./styles/Card.styles";
 
@@ -25,7 +25,7 @@ export const Card = ({
       )}
 
       <Styled.Icon src={iconSource} alt="icon" />
-      <Border hoverRef={ref} />
+      <AnimatedBorder hoverRef={ref} />
     </Styled.Card>
   );
 };
