@@ -7,4 +7,5 @@ export const App = styled.div`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 150px auto;
+  overflow: hidden;
 `;
