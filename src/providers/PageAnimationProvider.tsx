@@ -31,18 +31,16 @@ export type PageAnimationContext = {
 
 const animationToProps = {
   ltr: {
-    initial: {},
-    animate: {},
-    exit: {},
-    transition: {},
+    initial: { x: "-100%" },
+    animate: { x: 0 },
+    exit: { x: "100%" },
+    transition: {
+      type: "tween",
+      ease: "anticipate",
+      duration: 0.85,
+    },
   },
   rtl: {
-    initial: {},
-    animate: {},
-    exit: {},
-    transition: {},
-  },
-  initial: {
     initial: { x: "100%" },
     animate: { x: 0 },
     exit: { x: "-100%", position: "relative" },
@@ -51,6 +49,12 @@ const animationToProps = {
       ease: "anticipate",
       duration: 0.85,
     },
+  },
+  initial: {
+    initial: {},
+    animate: {},
+    exit: {},
+    transition: {},
   },
 } satisfies Record<Animation, AnimationProps>;
 
