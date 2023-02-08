@@ -11,23 +11,21 @@ export const PageAnimationProvider = ({
   const [animation, setAnimation] = useState<"ltr" | "rtl" | "initial">(
     "initial"
   );
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   const animationProps = animationToProps[animation];
 
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <PageAnimationContext.Provider value={{ animationProps, setAnimation }}>
+    <PageAnimationContext.Provider
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
+      value={{ animationProps, setAnimation, isAnimating, setIsAnimating }}
+    >
       {children}
     </PageAnimationContext.Provider>
   );
 };
 
 export type Animation = "ltr" | "rtl" | "initial";
-
-export type PageAnimationContext = {
-  animationProps: AnimationProps;
-  setAnimation: (value: Animation) => void;
-};
 
 const animationToProps = {
   ltr: {
@@ -58,7 +56,16 @@ const animationToProps = {
   },
 } satisfies Record<Animation, AnimationProps>;
 
+export type PageAnimationContext = {
+  animationProps: AnimationProps;
+  setAnimation: (value: Animation) => void;
+  setIsAnimating: (value: boolean) => void;
+  isAnimating: boolean;
+};
+
 const PageAnimationContext = createContext<PageAnimationContext>({
   animationProps: animationToProps.initial,
   setAnimation: () => {},
+  setIsAnimating: () => {},
+  isAnimating: false,
 });

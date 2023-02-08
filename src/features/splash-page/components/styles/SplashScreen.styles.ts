@@ -26,7 +26,7 @@ export const Title = styled.div`
   color: ${({ theme }) => theme.colors.accent01};
   background-color: ${({ theme }) => theme.colors.layer01};
 
-  padding: 20px;
+  padding: 20px 50px;
   font-size: 5em;
 
   white-space: nowrap;

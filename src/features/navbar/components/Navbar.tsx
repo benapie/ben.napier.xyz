@@ -47,7 +47,7 @@ const navLinkIdToOrder = {
 } satisfies Record<NavLinkID, number>;
 
 const useNavbarNavigation = () => {
-  const { setAnimation } = usePageAnimation();
+  const { setAnimation, isAnimating } = usePageAnimation();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -57,6 +57,7 @@ const useNavbarNavigation = () => {
   return {
     currentPage,
     onNavLinkClick: (navLink: NavLinkID) => {
+      if (isAnimating) return;
       if (currentPage === "unknown") {
         setAnimation("initial");
       } else if (navLinkIdToOrder[navLink] < navLinkIdToOrder[currentPage]) {

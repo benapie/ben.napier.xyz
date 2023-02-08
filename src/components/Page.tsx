@@ -9,10 +9,16 @@ export type PageProps = {
 };
 
 export const Page = ({ children, id, topOffset = 150 }: PageProps) => {
-  const { animationProps } = usePageAnimation();
+  const { animationProps, setIsAnimating } = usePageAnimation();
 
   return (
-    <Styled.Page key={id} top={topOffset} {...animationProps}>
+    <Styled.Page
+      key={id}
+      top={topOffset}
+      {...animationProps}
+      onAnimationStart={() => setIsAnimating(true)}
+      onAnimationComplete={() => setIsAnimating(false)}
+    >
       {children}
     </Styled.Page>
   );

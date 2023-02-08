@@ -7,7 +7,7 @@ const entries = [
   {
     title: "Sofware Development Engineer",
     subtitle: "Amazon",
-    body: "Working at Prime Video for living room devices.",
+    body: "Working on Prime Video for living room devices.",
     date: "2022-?",
   },
   {
