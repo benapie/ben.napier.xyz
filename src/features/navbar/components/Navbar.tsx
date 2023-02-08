@@ -1,11 +1,10 @@
-import { Animation, usePageAnimation } from "providers/PageAnimationProvider";
+import { usePageAnimation } from "providers/PageAnimationProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import { NavLink } from "./NavLink";
 import * as Styled from "./styles/Navbar.styles";
 
 export const Navbar = () => {
-  const { setAnimation } = usePageAnimation();
-  const { onNavLinkClick, currentPage } = useNavbarNavigation({ setAnimation });
+  const { onNavLinkClick, currentPage } = useNavbarNavigation();
 
   return (
     <Styled.Navbar>
@@ -47,11 +46,8 @@ const navLinkIdToOrder = {
   contact: 2,
 } satisfies Record<NavLinkID, number>;
 
-const useNavbarNavigation = ({
-  setAnimation,
-}: {
-  setAnimation: (animation: Animation) => void;
-}) => {
+const useNavbarNavigation = () => {
+  const { setAnimation } = usePageAnimation();
   const navigate = useNavigate();
   const location = useLocation();
 
