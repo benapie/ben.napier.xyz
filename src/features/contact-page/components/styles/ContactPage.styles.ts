@@ -5,6 +5,7 @@ export const ContactPage = styled.div`
   justify-content: center;
   padding: 10vh 0;
   height: fit-content;
+  user-select: none;
 `;
 
 export const Cards = styled.div`
