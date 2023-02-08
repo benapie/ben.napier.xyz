@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const Card = styled.button`
+  all: unset;
   background-color: ${({ theme }) => theme.colors.layer01};
   width: 300px;
   display: grid;
   grid-template-rows: 112px 210px;
   box-sizing: border-box;
   position: relative;
+  cursor: pointer;
 `;
 
 export const CardBorder = styled(motion.div)`

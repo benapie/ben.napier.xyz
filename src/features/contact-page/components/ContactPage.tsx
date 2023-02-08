@@ -13,9 +13,21 @@ export const ContactPage = () => (
   <Page id="contact">
     <Styled.ContactPage>
       <Styled.Cards>
-        <Card headingSource={GitHubLogo} iconSource={GitHubIcon} />
-        <Card headingSource={LinkedInLogo} iconSource={LinkedInIcon} />
-        <Card headingText="Email" iconSource={EmailIcon} />
+        <Card
+          headingSource={GitHubLogo}
+          iconSource={GitHubIcon}
+          link="https://github.com/benapie"
+        />
+        <Card
+          headingSource={LinkedInLogo}
+          iconSource={LinkedInIcon}
+          link="https://www.linkedin.com/in/benapie/"
+        />
+        <Card
+          headingText="Email"
+          iconSource={EmailIcon}
+          link="mailto:ben@napier.xyz"
+        />
       </Styled.Cards>
     </Styled.ContactPage>
   </Page>

@@ -4,7 +4,7 @@ import { RefObject, useEffect, useState } from "react";
 import * as Styled from "./styles/Border.styles";
 
 export type BorderProps = {
-  hoverRef: RefObject<HTMLDivElement>;
+  hoverRef: RefObject<HTMLElement>;
 };
 
 export const AnimatedBorder = ({ hoverRef }: BorderProps) => {
@@ -18,11 +18,7 @@ export const AnimatedBorder = ({ hoverRef }: BorderProps) => {
   );
 };
 
-const useAnimation = ({
-  hoverRef,
-}: {
-  hoverRef: RefObject<HTMLDivElement>;
-}) => {
+const useAnimation = ({ hoverRef }: { hoverRef: RefObject<HTMLElement> }) => {
   const controls = useAnimationControls();
 
   const animateIn = async () => {

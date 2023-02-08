@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState } from "react";
 
 export type HoverParams = {
-  hoverRef: RefObject<HTMLDivElement>;
+  hoverRef: RefObject<HTMLElement>;
   onMouseOver?: () => void;
   onMouseOut?: () => void;
 };
